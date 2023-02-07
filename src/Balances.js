@@ -14,6 +14,7 @@ export default function Main(props) {
 
     api.query.system.account
       .multi(addresses, balances => {
+        console.log("Balances", addresses, balances);
         const balancesMap = addresses.reduce(
           (acc, address, index) => ({
             ...acc,

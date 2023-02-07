@@ -20,10 +20,20 @@ function Main(props) {
     let keyNum = 0
     const allEvents = async () => {
       unsub = await api.query.system.events(events => {
+        console.log("Events", events);
+        // 1. Client works with backend through websoket
+
+        // Task
+        // 1. found the place where to catch the events
+        // 2. Log them in console.
+        // 3. Store in localStorage.
+        // 4. Show then in the table.
+
         // loop through the Vec<EventRecord>
         events.forEach(record => {
           // extract the phase, event and the event types
           const { event, phase } = record
+          console.log("Event", event, phase)
 
           // show what we are busy with
           const evHuman = event.toHuman()
